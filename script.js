@@ -1,27 +1,27 @@
 'use strict';
 
+// change the draw
 document.getElementById('coefLoucura').addEventListener("keyup", function() {
     var coeficienteDeLoucura = parseInt(document.getElementsByClassName('input')[0].value);
     init(coeficienteDeLoucura);
   });
 
-  document.getElementById('objForm').addEventListener("keyup", function() {
-    var objectForm = parseInt(document.getElementById('objForm')[0].value);
+// change the form
+document.getElementById('objForm').addEventListener("keyup", function() {
+    var objectForm = parseInt(document.getElementsByClassName('input')[0].value);
     update(objectForm);
-  });
+});
 
+// change the color ???
+/*
+var colorWell = document.getElementById('colorWell').addEventListener("change", function() {
+    colorWell = parseInt(document.getElementById('colorWell')[0].value);
+})
+*/
 
 var WIDTH = 101,
     HEIGHT = 101;
-// const PALETTE = ['#f7f1e3', '#706fd3', '#474787', '#40407a', '#2c2c54'] // branco, roxo
-// const PALETTE = ['#f7f1e3', '#33d9b2', '#34ace0', '#706fd3', '#ff5252'] // branco, verde, roxo, vermelho
-// const PALETTE = ['#f7f1e3', '#34e7e4', '#4bcffa', '#575fcf', '#0be881'] // branco, azul, roxo
-// const PALETTE = ['#f7f1e3', '#f6e58d', '#ffbe76', '#ff7979', '#eb4d4b'] // branco, laranja, rosa, amarelo
-// const PALETTE = ['#95afc0', '#7ed6df', '#e056fd', '#686de0', '#30336b'] // cinza, azul, roxo, azul escuro 
-// const PALETTE = ['#dfe6e9', '#55efc4', '#81ecec', '#74b9ff', '#a29bfe'] // branco, verde, azul
-// const PALETTE = ['#f7f1e3', '#686de0', '#f0932b', '#ffbe76', '#e056fd'] // branco, laranja, roxo
-// const PALETTE = ['#f7f1e3', '#ffda79', '#ffb142', '#ff793f', '#ff5252'] // branco, laranja, amarelo
-// const PALETTE = ['#fff', '#ccc', '#999', '#666', '#333'] // pb
+
 var PALETTE = ['#000', '#66ccff', '#ff99ff', '#66ff66', '#ffff66']; // 
 
 var NEXTFRAME = void 0;
@@ -36,12 +36,12 @@ function init(coeficienteDeLoucura = 0) {
     canvas.width = WIDTH;
     canvas.height = HEIGHT;
 
-    // Init the grid with 0's
+// Init the grid
     grid = new Array(HEIGHT).fill(0).map(function (x) {
         return new Array(WIDTH).fill(coeficienteDeLoucura); //0 to 6: efeito do desenho
     });
     
-    // Put a lot of sand grains in the middle
+// Put a lot of sand grains in the middle
     grid[Math.floor(WIDTH / 2)][Math.floor(HEIGHT / 2)] = Infinity;
 
     tempgrid = new Array(HEIGHT).fill(0).map(function (x) {
@@ -50,7 +50,7 @@ function init(coeficienteDeLoucura = 0) {
 }
 
 function update(objectForm = 0) {
-    // Copy the grid on the tempgrid
+// Copy the grid on the tempgrid
     for (var y = 0; y < HEIGHT; y++) {
         for (var x = 0; x < WIDTH; x++) {
             tempgrid[y][x] = grid[y][x];
@@ -59,7 +59,7 @@ function update(objectForm = 0) {
 
     var n = void 0;
 
-    // Topple the grid
+// Topple the grid
     for (var _y = 1; _y < HEIGHT - 1; _y++) {
         for (var _x = 1; _x < WIDTH - 1; _x++) {
             n = tempgrid[_y][_x];
@@ -96,8 +96,21 @@ function nextframe() {
 init();
 nextframe();
 
+// button modal
 $(document).ready(function() {
     $("button").click(function() {
       $("span").toggle();
     })
   })
+
+
+// + cores
+// const PALETTE = ['#f7f1e3', '#706fd3', '#474787', '#40407a', '#2c2c54'] // branco, roxo
+// const PALETTE = ['#f7f1e3', '#33d9b2', '#34ace0', '#706fd3', '#ff5252'] // branco, verde, roxo, vermelho
+// const PALETTE = ['#f7f1e3', '#34e7e4', '#4bcffa', '#575fcf', '#0be881'] // branco, azul, roxo
+// const PALETTE = ['#f7f1e3', '#f6e58d', '#ffbe76', '#ff7979', '#eb4d4b'] // branco, laranja, rosa, amarelo
+// const PALETTE = ['#95afc0', '#7ed6df', '#e056fd', '#686de0', '#30336b'] // cinza, azul, roxo, azul escuro 
+// const PALETTE = ['#dfe6e9', '#55efc4', '#81ecec', '#74b9ff', '#a29bfe'] // branco, verde, azul
+// const PALETTE = ['#f7f1e3', '#686de0', '#f0932b', '#ffbe76', '#e056fd'] // branco, laranja, roxo
+// const PALETTE = ['#f7f1e3', '#ffda79', '#ffb142', '#ff793f', '#ff5252'] // branco, laranja, amarelo
+// const PALETTE = ['#fff', '#ccc', '#999', '#666', '#333'] // pb
