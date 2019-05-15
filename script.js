@@ -2,13 +2,32 @@
 
 var obFor = 3;
 
-var cor1 = '#66ccff';
+var cor1 = '#000';
+var cor2 = '#66ccff';
+var cor3 = '#ff99ff';
+var cor4 = '#66ff66';
+var cor5 = '#ffff66';
 
 document.getElementById('colorWell1').addEventListener('change', function() {
-    cor1 = parseInt(document.getElementById('colorWell1').value);
-    update(cor1);
+    cor1 = (document.getElementById('colorWell1').value);
+    draw();
 });
-
+document.getElementById('colorWell2').addEventListener('change', function() {
+    cor2 = (document.getElementById('colorWell2').value);
+    draw();
+});
+document.getElementById('colorWell3').addEventListener('change', function() {
+    cor3 = (document.getElementById('colorWell3').value);
+    draw();
+});
+document.getElementById('colorWell4').addEventListener('change', function() {
+    cor4 = (document.getElementById('colorWell4').value);
+    draw();
+});
+document.getElementById('colorWell5').addEventListener('change', function() {
+    cor5 = (document.getElementById('colorWell5').value);
+    draw();
+});
 
 // change the form
 document.getElementById('objForm').addEventListener("keyup", function() {
@@ -24,8 +43,6 @@ document.getElementById('coefLoucura').addEventListener("keyup", function() {
 
 var WIDTH = 101,
     HEIGHT = 101;
-
-var PALETTE = ['#000', cor1, '#ff99ff', '#66ff66', '#ffff66']; 
 
 var NEXTFRAME = void 0;
 
@@ -79,6 +96,7 @@ function update(obFor) {
 
 function draw() {
     var n = void 0;
+    var PALETTE = [cor1 , cor2, cor3, cor4, cor5]; 
 
     for (var y = 1; y < HEIGHT - 1; y++) {
         for (var x = 1; x < WIDTH - 1; x++) {
@@ -105,15 +123,3 @@ $(document).ready(function() {
       $("span").toggle();
     })
   })
-
-
-// + cores
-// const PALETTE = ['#f7f1e3', '#706fd3', '#474787', '#40407a', '#2c2c54'] // branco, roxo
-// const PALETTE = ['#f7f1e3', '#33d9b2', '#34ace0', '#706fd3', '#ff5252'] // branco, verde, roxo, vermelho
-// const PALETTE = ['#f7f1e3', '#34e7e4', '#4bcffa', '#575fcf', '#0be881'] // branco, azul, roxo
-// const PALETTE = ['#f7f1e3', '#f6e58d', '#ffbe76', '#ff7979', '#eb4d4b'] // branco, laranja, rosa, amarelo
-// const PALETTE = ['#95afc0', '#7ed6df', '#e056fd', '#686de0', '#30336b'] // cinza, azul, roxo, azul escuro 
-// const PALETTE = ['#dfe6e9', '#55efc4', '#81ecec', '#74b9ff', '#a29bfe'] // branco, verde, azul
-// const PALETTE = ['#f7f1e3', '#686de0', '#f0932b', '#ffbe76', '#e056fd'] // branco, laranja, roxo
-// const PALETTE = ['#f7f1e3', '#ffda79', '#ffb142', '#ff793f', '#ff5252'] // branco, laranja, amarelo
-// const PALETTE = ['#fff', '#ccc', '#999', '#666', '#333'] // pb

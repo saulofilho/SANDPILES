@@ -46,3 +46,13 @@ span {
       image-rendering: -webkit-crisp-edges;
       image-rendering: pixelated;
       image-rendering: crisp-edges; }
+footer {
+  font-family: Helvetica, sans-serif;
+  text-align: right;
+  color: white;
+  padding: 1em 1em;
+}
+a {
+  text-decoration: none;
+  color: white;
+}

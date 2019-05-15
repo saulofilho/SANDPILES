@@ -15,41 +15,37 @@
 <body>
 
     <button>S A N D P I L E S</button>
+    <button id="b2">save as .png (S00N)</button>
 
     <span style="display: none">
         <div class="inSt">
-            <input id="coefLoucura" class="input" type="number"/>
+            <input id="coefLoucura" class="input" type="number" />
             <label for="coefLoucura">keyup or keydown to change the draw</label>
-        </div>
-        <div class="inSt">
-            <input id="objForm" class="input" type="number"/>
+            <input id="objForm" class="input" type="number" />
             <label for="objForm">keyup or keydown to change the form</label>
         </div>
+
         <div class="inSt">
-            <input id="colorWell1" class="input" type="color"/>
-            <label for="colorWell">change the color 1 S00N</label>
+            <input id="colorWell1" class="input" type="color" value="#000" />
+            <label for="colorWell">pick one</label>
+            <input id="colorWell2" class="input" type="color" value="#66ccff" />
+            <label for="colorWell">pick one</label>
+            <input id="colorWell3" class="input" type="color" value="#ff99ff" />
+            <label for="colorWell">pick one</label>
+            <input id="colorWell4" class="input" type="color" value="#66ff66" />
+            <label for="colorWell">pick one</label>
+            <input id="colorWell5" class="input" type="color" value="#ffff66" />
+            <label for="colorWell">pick one</label>
         </div>
-        <div class="inSt">
-            <input id="colorWell2" class="input" type="color" value="#ff0000"/>
-            <label for="colorWell">change the color 2 S00N</label>
-        </div>
-        <div class="inSt">
-            <input id="colorWell3" class="input" type="color" value="#ff0000"/>
-            <label for="colorWell">change the color 3 S00N</label>
-        </div>
-        <div class="inSt">
-            <input id="colorWell4" class="input" type="color" value="#ff0000"/>
-            <label for="colorWell">change the color 4 S00N</label>
-        </div>
-        <div class="inSt">
-            <input id="colorWell5" class="input" type="color" value="#ff0000"/>
-            <label for="colorWell">change the color 5 S00N</label>
-        </div>
+
     </span>
 
     <div class="wrapper">
         <canvas id="canvas" width="101" height="101"></canvas>
     </div>
+
+    <footer>Thanks, <a href="https://github.com/gio-rotta" target="_blank">Gio</a>, for your knowledge and your
+        patience.</footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
