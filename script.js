@@ -1,28 +1,31 @@
 'use strict';
 
+var obFor = 3;
+
+var cor1 = '#66ccff';
+
+document.getElementById('colorWell1').addEventListener('change', function() {
+    cor1 = parseInt(document.getElementById('colorWell1').value);
+    update(cor1);
+});
+
+
+// change the form
+document.getElementById('objForm').addEventListener("keyup", function() {
+    obFor = parseInt(document.getElementById('objForm').value);
+    update(obFor);
+});
+
 // change the draw
 document.getElementById('coefLoucura').addEventListener("keyup", function() {
     var coeficienteDeLoucura = parseInt(document.getElementsByClassName('input')[0].value);
     init(coeficienteDeLoucura);
   });
 
-// change the form
-document.getElementById('objForm').addEventListener("keyup", function() {
-    var objectForm = parseInt(document.getElementsByClassName('input')[0].value);
-    update(objectForm);
-});
-
-// change the color ???
-/*
-var colorWell = document.getElementById('colorWell').addEventListener("change", function() {
-    colorWell = parseInt(document.getElementById('colorWell')[0].value);
-})
-*/
-
 var WIDTH = 101,
     HEIGHT = 101;
 
-var PALETTE = ['#000', '#66ccff', '#ff99ff', '#66ff66', '#ffff66']; // 
+var PALETTE = ['#000', cor1, '#ff99ff', '#66ff66', '#ffff66']; 
 
 var NEXTFRAME = void 0;
 
@@ -49,7 +52,7 @@ function init(coeficienteDeLoucura = 0) {
     });
 }
 
-function update(objectForm = 0) {
+function update(obFor) {
 // Copy the grid on the tempgrid
     for (var y = 0; y < HEIGHT; y++) {
         for (var x = 0; x < WIDTH; x++) {
@@ -63,7 +66,7 @@ function update(objectForm = 0) {
     for (var _y = 1; _y < HEIGHT - 1; _y++) {
         for (var _x = 1; _x < WIDTH - 1; _x++) {
             n = tempgrid[_y][_x];
-            if (n > objectForm) { //-3 to 6: formato do objeto
+            if (n > obFor) { //-3 to 6: formato do objeto
                 grid[_y][_x] -= 4; //crescimento
                 grid[_y - 1][_x] += 1; //top
                 grid[_y + 1][_x] += 1; //bottom
@@ -89,7 +92,7 @@ function draw() {
 }
 
 function nextframe() {
-    update();
+    update(obFor);
     draw();
 }
 
