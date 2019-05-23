@@ -1,51 +1,47 @@
-html,
-  body {
+html, body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%; 
     background-color: black;
 }
-
 label {
   font-family: helvetica, sans-serif;
   color: white;
   font-size: 12px;
   padding-left: 2px;
 }
-
 button {
   background-color: black;
   color: white;
   font-family: Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
 }
-
 span {
   padding: 1em 1em 1em 1em;
 }
-
 .inSt {
   padding: 20px 0 0 10px;
 }
-
-  .wrapper {
+.wrapper {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; }
-    .wrapper canvas {
-      flex: 1 1 auto;
-      width: 800px;
-      height: 100%;
-      max-width: 100%;
-      object-fit: contain;
-      image-rendering: -moz-crisp-edges;
-      image-rendering: -webkit-crisp-edges;
-      image-rendering: pixelated;
-      image-rendering: crisp-edges; }
+    flex-wrap: wrap; 
+  }
+.wrapper canvas {
+  padding: 2em 2em 2em 2em;
+  flex: 1 1 auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges; 
+}
 footer {
   font-family: Helvetica, sans-serif;
   text-align: right;
@@ -54,5 +50,14 @@ footer {
 }
 a {
   text-decoration: none;
-  color: white;
+  color: yellowgreen;
+}
+#textB {
+  padding: 3em 0 0.1em 1em;
+  color: yellow;
+  font-family: Helvetica, sans-serif;
+  font-size: 12px;
+}
+input {
+  width: 30px;
 }

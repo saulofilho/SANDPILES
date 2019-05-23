@@ -13,10 +13,8 @@
 </head>
 
 <body>
-
-    <button>S A N D P I L E S</button>
-    <button id="b2">save as .png (S00N)</button>
-
+    <button id="b1">S A N D P I L E S</button>
+    <button id="b2" onclick="download_image()">save as .png (beta)</button>
     <span style="display: none">
         <div class="inSt">
             <input id="coefLoucura" class="input" type="number" />
@@ -24,7 +22,6 @@
             <input id="objForm" class="input" type="number" />
             <label for="objForm">keyup or keydown to change the form</label>
         </div>
-
         <div class="inSt">
             <input id="colorWell1" class="input" type="color" value="#000" />
             <label for="colorWell">pick one</label>
@@ -37,16 +34,16 @@
             <input id="colorWell5" class="input" type="color" value="#ffff66" />
             <label for="colorWell">pick one</label>
         </div>
-
     </span>
-
     <div class="wrapper">
-        <canvas id="canvas" width="101" height="101"></canvas>
+        <canvas id="cvs" width="600" height="600"></canvas>
     </div>
-
-    <footer>Thanks, <a href="https://github.com/gio-rotta" target="_blank">Gio</a>, for your knowledge and your
-        patience.</footer>
-
+    <div id="textB">
+        <p>
+            Thanks, <a href="https://github.com/gio-rotta" target="_blank">Gio</a>, for your knowledge and your
+            patience.
+        </p>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
 </body>

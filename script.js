@@ -41,13 +41,22 @@ document.getElementById('coefLoucura').addEventListener("keyup", function() {
     init(coeficienteDeLoucura);
   });
 
-var WIDTH = 101,
-    HEIGHT = 101;
+var WIDTH = 88,
+    HEIGHT = 88;
 
 var NEXTFRAME = void 0;
 
-var canvas = document.getElementById('canvas');
+var canvas = document.getElementById('cvs');
 var ctx = canvas.getContext('2d');
+
+function download_image(){
+    var canvas1 = document.getElementById("cvs");
+    var image = canvas1.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    var link = document.createElement('a');
+    link.download = "sandpiles.png";
+    link.href = image;
+    link.click();
+  }
 
 var grid = [];
 var tempgrid = [];
@@ -119,7 +128,7 @@ nextframe();
 
 // button modal
 $(document).ready(function() {
-    $("button").click(function() {
+    $("#b1").click(function() {
       $("span").toggle();
     })
   })
